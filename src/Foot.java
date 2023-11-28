@@ -1,3 +1,6 @@
+import java.awt.*;
+import java.util.Scanner;
+
 public class Foot {
     /*
         ! ตาม Requirement.
@@ -6,16 +9,18 @@ public class Foot {
 
     //Aggregation
     private FootShape shape;
-
     public Foot(FootShape shape) {
         this.shape = shape;
     }
 
+    public Foot() {
+        this.shape = new FootShape();
+    }
+
     public void draw(String shapeType) {
         switch (shapeType.toLowerCase()) {
-            // switch case with Arrow
-            case "ellipse" -> new FootShape().drawAsEllipse();
-            case "rectangle" -> new FootShape().drawAsRectangle();
+            case "ellipse" -> shape.drawAsEllipse().draw();
+            case "rectangle" -> shape.drawAsRectangle().draw();
             default -> System.out.println("Invalid Shape Type");
         }
     }
@@ -23,24 +28,25 @@ public class Foot {
     /*
         # สามารถทำ main() ใน class Foot ได้
     */
-
-    //    public static void main(String[] args) {
-    //        Scanner scanner = new Scanner(System.in);
-    //        System.out.print("What to draw? 1. Ellipse, 2. Rectangle ");
-    //        int choice = scanner.nextInt();
+    //        private static FootShape shape;
+    //        public static void main(String[] args) {
+    //            shape = new FootShape();
+    //            Scanner scanner = new Scanner(System.in);
+    //            System.out.print("What to draw? 1. Ellipse, 2. Rectangle ");
+    //            int choice = scanner.nextInt();
     //
-    //        switch(choice) {
-    //            case 1:
-    //                new FootShape().drawAsEllipse();
-    //                break;
-    //            case 2:
-    //                new FootShape().drawAsRectangle();
-    //                break;
-    //            default:
-    //                System.out.println("Invalid Shape Type");
+    //            switch(choice) {
+    //                case 1:
+    //                    shape.drawAsEllipse().draw();
+    //                    break;
+    //                case 2:
+    //                    shape.drawAsRectangle().draw();
+    //                    break;
+    //                default:
+    //                    System.out.println("Invalid Shape Type");
+    //            }
+    //
+    //            scanner.close();
     //        }
-    //
-    //        scanner.close();
-    //    }
 
 }

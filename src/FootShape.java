@@ -1,9 +1,11 @@
 class FootShape {
-    public void drawAsEllipse() {
-        new Ellipse().draw();
+    //Dependency
+    public Ellipse drawAsEllipse() {
+        return new Ellipse();
     }
 
-    public void drawAsRectangle() {
-        new Rectangle().draw();
+    //Dependency
+    public Rectangle drawAsRectangle() {
+        return new Rectangle();
     }
 }
